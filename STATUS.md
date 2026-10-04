@@ -1,6 +1,6 @@
 # STATUS
 
-Updated: 2026-09-25
+Updated: 2026-10-04
 
 ## Purpose
 Santa Clara County prospecting PWA and verified prospect dataset.
@@ -16,7 +16,7 @@ Verify the current 450-prospect build, offline behavior, filters, evidence links
 
 ## Recovery note (2026-10-04, PT)
 - Source restored from the Google Drive zip `San-Jose-Prospecting-PWA-Source.zip` (anastaysia487 Drive, uploaded 2026-09-16; files stamped 2026-09-06).
-- Restored: buildless PWA in `dist/` with 150 verified San Jose leads and 150 matched graphics, `scripts/validate.mjs`, `package.json`, and the GitHub Pages workflow (`npm test`, then publish `dist/`).
+- Restored: buildless PWA in `dist/` with 150 verified San Jose leads and 150 matched graphics, `scripts/validate.mjs`, and `package.json`. The zip's GitHub Pages workflow is kept only as a template at `docs/pages-workflow.yml.txt` (not installed, because the bot token lacks `workflow` scope). The live site is published by hand from the `gh-pages` branch (a copy of `dist/`) and does not update automatically.
 - Excluded: `.openai/hosting.json` (another host's config, not used by GitHub Pages) and the zip's MIT `LICENSE` (conflicts with the all-rights-reserved SmartPickShop Holdings licence in PR #1).
 - `npm test` passed locally: 150 unique leads, 150 matched graphics, valid JS, manifest, payment defaults.
 - The 450-lead list was not found in GitHub, Drive, Gmail, or the box. It was most likely loaded on the phone with the app's "Import prospects JSON" feature, so it probably lives only on that device. Export a full backup from the phone to recover it.

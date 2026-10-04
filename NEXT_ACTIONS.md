@@ -1,6 +1,6 @@
 # NEXT ACTIONS
 
-Updated: 2026-09-25
+Updated: 2026-10-04
 
 ## Smallest next execution block
 1. Verify the current 450-prospect build, offline behavior, filters, evidence links, and preserved device progress; recover and commit missing source if the repository is still empty.

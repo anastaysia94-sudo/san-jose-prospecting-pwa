@@ -39,4 +39,6 @@ The app does **not** silently send email. Android and Gmail require the user to 
 npm test
 ```
 
-The application is a buildless static PWA. All deployable files are in `dist/`. The GitHub Pages workflow validates and deploys `dist/` from `main`.
+The application is a buildless static PWA. All deployable files are in `dist/`.
+
+**Deployment (current, temporary):** GitHub Pages serves the `gh-pages` branch, which is a manual copy of `dist/`. Pushing to `main` does **not** update the live site; refresh `gh-pages` from `dist/` after changes. The intended workflow (validate, then deploy `dist/` from `main`) is stored at `docs/pages-workflow.yml.txt`; someone with `workflow` scope should install it as `.github/workflows/pages.yml` and switch Pages back to "GitHub Actions".
