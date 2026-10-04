@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="Prepare, share, and track personalized outreach for 150 verified San Jose prospects.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <title>SJ Prospecting</title>
+</head>
+<body>
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4.5 13H11l-1 9 9.5-12H13V2Z"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1.03 1.56V21h-4v-.08A1.7 1.7 0 0 0 8.95 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-1.56-1H3v-4h.08A1.7 1.7 0 0 0 4.6 8.95a1.7 1.7 0 0 0-.34-1.88L4.2 7l2.83-2.83.06.06A1.7 1.7 0 0 0 8.95 4.6 1.7 1.7 0 0 0 10 3.08V3h4v.08a1.7 1.7 0 0 0 1.05 1.52 1.7 1.7 0 0 0 1.88-.34l.06-.06L19.82 7l-.06.06a1.7 1.7 0 0 0-.34 1.88A1.7 1.7 0 0 0 20.92 10H21v4h-.08A1.7 1.7 0 0 0 19.4 15Z"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4 20-7Z"/><path d="M22 2 11 13"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 3h7v7M10 14 21 3M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"/></symbol>
+    <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M10 18h4"/></symbol>
+  </svg>
+  <header class="app-header">
+    <div class="brand"><span class="brand-mark"><svg><use href="#i-bolt"/></svg></span><span><strong>SJ Prospecting</strong><small id="syncLabel">On-device workspace</small></span></div>
+    <div class="header-actions"><button class="icon-button" id="installButton" type="button" hidden aria-label="Install app"><svg><use href="#i-download"/></svg></button><button class="icon-button" id="menuButton" type="button" aria-label="Open settings"><svg><use href="#i-settings"/></svg></button></div>
+  </header>
+  <main id="app" aria-live="polite">
+    <section class="view active" data-view="queue">
+      <div class="page-heading"><div><p class="eyebrow">TODAY'S WORKFLOW</p><h1>Contact the next best lead.</h1></div><p class="date-label" id="todayLabel"></p></div>
+      <div class="metrics" id="metrics"></div>
+      <section class="panel next-panel" id="nextLeadPanel"><div class="panel-empty"><span class="spinner"></span>Loading 150 prospects…</div></section>
+      <section class="section-block"><div class="section-heading"><div><p class="eyebrow">TIME-SENSITIVE</p><h2>Follow-ups due</h2></div><span class="count-badge" id="dueCount">0</span></div><div class="stack" id="dueList"></div></section>
+      <section class="section-block"><div class="section-heading"><div><p class="eyebrow">RECENT</p><h2>Activity</h2></div><button class="text-button" data-nav="activity" type="button">View all</button></div><div class="timeline compact" id="recentActivity"></div></section>
+    </section>
+    <section class="view" data-view="leads">
+      <div class="page-heading"><div><p class="eyebrow">150 VERIFIED INBOXES</p><h1>Lead workspace</h1></div></div>
+      <div class="toolbar panel">
+        <label class="search-field"><svg><use href="#i-search"/></svg><input id="leadSearch" type="search" placeholder="Search business, email, category…" autocomplete="off"></label>
+        <button class="icon-button filter-toggle" id="filterToggle" type="button" aria-label="Show filters"><svg><use href="#i-filter"/></svg></button>
+        <div class="filters" id="filters">
+          <select id="statusFilter" aria-label="Filter by status"><option value="all">All statuses</option><option value="new">Not contacted</option><option value="sent">Sent</option><option value="replied">Replied</option><option value="interested">Interested</option><option value="paid">Paid</option><option value="not-now">Not now</option><option value="dnc">Do not contact</option></select>
+          <select id="industryFilter" aria-label="Filter by industry"><option value="all">All categories</option></select>
+          <select id="sortFilter" aria-label="Sort leads"><option value="rank">Best ranked</option><option value="due">Follow-up due</option><option value="business">Business A–Z</option><option value="score">Highest score</option></select>
+        </div>
+      </div>
+      <div class="results-row"><span id="resultsCount">0 leads</span><button class="text-button" id="resetFilters" type="button">Reset filters</button></div><div class="lead-list" id="leadList"></div>
+    </section>
+    <section class="view" data-view="activity">
+      <div class="page-heading"><div><p class="eyebrow">AUDIT TRAIL</p><h1>Activity & follow-ups</h1></div></div><div class="metrics mini" id="activityMetrics"></div>
+      <section class="panel"><div class="section-heading"><h2>All activity</h2><button class="text-button danger" id="clearActivity" type="button">Clear</button></div><div class="timeline" id="activityList"></div></section>
+    </section>
+    <section class="view" data-view="settings">
+      <div class="page-heading"><div><p class="eyebrow">YOUR DEFAULTS</p><h1>Offer & data settings</h1></div></div>
+      <form class="settings-grid" id="settingsForm">
+        <section class="panel form-section"><div><p class="eyebrow">OUTREACH IDENTITY</p><h2>Email defaults</h2></div><label>Sender name<input name="senderName" required></label><label>Price (USD)<input name="price" inputmode="numeric" type="number" min="1" required></label><label>Delivery time (minutes)<input name="deliveryMinutes" inputmode="numeric" type="number" min="1" required></label><label>Payment label<input name="paymentLabel" required></label><label>Payment or invoice link<input name="paymentUrl" type="url" required></label><label>Follow-up delay (hours)<input name="followUpHours" inputmode="decimal" type="number" min="1" step="0.5" required></label><button class="primary-button" type="submit"><svg><use href="#i-check"/></svg>Save settings</button></section>
+        <section class="panel form-section"><div><p class="eyebrow">PORTABLE WORKSPACE</p><h2>Backup & import</h2></div><p class="muted">Progress is stored only on this device. Export a backup before clearing browser data or moving phones.</p><button class="secondary-button" id="exportBackup" type="button"><svg><use href="#i-download"/></svg>Export full backup</button><button class="secondary-button" id="exportCsv" type="button"><svg><use href="#i-download"/></svg>Export progress CSV</button><label class="file-button"><svg><use href="#i-external"/></svg>Import backup JSON<input id="importBackup" type="file" accept="application/json,.json" hidden></label><label class="file-button"><svg><use href="#i-users"/></svg>Import updated prospects JSON<input id="importProspects" type="file" accept="application/json,.json" hidden></label><button class="text-button danger left" id="resetWorkspace" type="button">Reset all local progress</button></section>
+        <section class="panel form-section safety-note"><div><p class="eyebrow">SAFE AUTOMATION</p><h2>You remain in control</h2></div><p>This app prepares one personalized message and matching preview at a time. Android still requires you to choose an email app and tap Send. Do-not-contact choices permanently suppress a lead unless you manually reset it.</p></section>
+      </form>
+    </section>
+  </main>
+  <nav class="bottom-nav" aria-label="Primary navigation"><button class="active" data-nav="queue" type="button"><svg><use href="#i-bolt"/></svg><span>Queue</span></button><button data-nav="leads" type="button"><svg><use href="#i-users"/></svg><span>Leads</span></button><button data-nav="activity" type="button"><svg><use href="#i-clock"/></svg><span>Activity</span></button><button data-nav="settings" type="button"><svg><use href="#i-settings"/></svg><span>Settings</span></button></nav>
+  <div class="sheet-backdrop" id="sheetBackdrop" hidden></div><aside class="lead-sheet" id="leadSheet" aria-hidden="true" aria-label="Lead details"></aside><div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
