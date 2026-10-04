@@ -1,0 +1,1 @@
+{"name":"san-jose-prospecting-pwa","version":"1.0.0","private":true,"type":"module","description":"Android-first PWA for personalized, one-at-a-time San Jose prospect outreach.","scripts":{"test":"node scripts/validate.mjs"},"engines":{"node":">=20"}}
